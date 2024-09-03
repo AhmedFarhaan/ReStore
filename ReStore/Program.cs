@@ -1,6 +1,7 @@
 
 using Microsoft.EntityFrameworkCore;
 using ReStore.Data;
+using ReStore.Middleware;
 
 namespace ReStore
 {
@@ -24,6 +25,8 @@ namespace ReStore
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
+            app.UseMiddleware<ExceptionMiddleWare>();
+
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();
