@@ -10,11 +10,11 @@ namespace ReStore.Entities
         //Method for adding product to Basket
         public void AddItem(Product product, int quantity)
         {
-            if (Items.All(item => item.ProductId != product.id))
+            if (Items.All(item => item.ProductId != product.Id))
             {
                 Items.Add(new BasketItem { Product =product,Quantity=quantity});
             }
-            var existtingItems = Items.FirstOrDefault(item => item.ProductId == product.id);
+            var existtingItems = Items.FirstOrDefault(item => item.ProductId == product.Id);
             if (existtingItems != null) existtingItems.Quantity += quantity;
         }
 
