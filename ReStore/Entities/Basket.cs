@@ -6,7 +6,8 @@ namespace ReStore.Entities
         public int Id { get; set; }
         public string BuyerId { get; set; }
         public List<BasketItem> Items { get; set; } = new();//initialize new list of basket items(one to many relationship)
-
+        public string PaymentIntetId { get; set; }
+        public string ClientSecret {  get; set; }
         //Method for adding product to Basket
         public void AddItem(Product product, int quantity)
         {

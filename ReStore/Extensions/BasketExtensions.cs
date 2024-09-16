@@ -12,6 +12,8 @@ namespace ReStore.Extensions
             {
                 Id = basket.Id,
                 BuyerId = basket.BuyerId,
+                PaymentIntentId=basket.PaymentIntetId,
+                ClientSecret = basket.ClientSecret,
                 Items = basket.Items.Select(item => new BasketItemDto
                 {
                     ProductId = item.ProductId,

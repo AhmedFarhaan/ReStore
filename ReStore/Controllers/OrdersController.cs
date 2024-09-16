@@ -73,7 +73,8 @@ namespace ReStore.Controllers
                 BuyerId = User.Identity.Name,
                 ShippingAddress = orderDto.ShippingAddress,
                 Subtotal = subTotal,
-                DeliveryFee = deliveryFee
+                DeliveryFee = deliveryFee,
+                PaymentIntentId = basket.PaymentIntetId,
             };
             _conetxt.Orders.Add(order);
             _conetxt.Baskets.Remove(basket);
